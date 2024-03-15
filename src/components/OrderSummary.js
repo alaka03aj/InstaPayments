@@ -5,7 +5,7 @@ function OrderSummary({details}) {
     return (
         <>
         <div>
-            <h2>Order Summary</h2>
+            <h2 style={{marginBottom: "32px"}}>Order Summary</h2>
             <div style={{display: "flex", flexDirection: "column", gap: "32px"}}>
                 {details.map(product => (
                     <div key={product.id} style={{display: "flex", gap: "32px"}}>
@@ -13,13 +13,13 @@ function OrderSummary({details}) {
                         <div>
                             <p>{product.title}</p>
                             <p>Quantity: {product.quantity}</p>
-                            <p>${product.price}</p>
+                            <p style={{marginTop: "7px"}}>${product.price}</p>
                         </div>
                     </div>
                 ))}
             </div>
             <div style={{marginTop: "48px"}}>
-                <p>Total: ${totalPrice}</p>
+                <p style={{fontSize: "24px"}}>Total: ${totalPrice}</p>
             </div>
         </div>
         </>

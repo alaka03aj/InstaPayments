@@ -7,7 +7,7 @@ export default function Payment() {
     const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(null);
 
     if (loading) {
-        return <p>Loading...</p>;
+        return <p style={{textAlign: "center"}}>Loading...</p>;
     }
 
     const handlePaymentMethodChange = (event) => {
@@ -18,9 +18,9 @@ export default function Payment() {
 
     return (
         <>
-            <div>Payment Dashboard</div>
+            <div><h1>Payment Dashboard</h1></div>
             <p>Choose your payment method</p>
-            <div>
+            <div style={{marginBottom: "32px"}}>
                 {payments.map((payment) => (
                     <div key={payment} style={{ display: "flex", gap: "32px" }}>
                         <input
@@ -35,7 +35,7 @@ export default function Payment() {
                     </div>
                 ))}
             </div>
-            <Link href={"/confirmation"}>Confirm Order</Link>
+            <Link href={"/confirmation"} style={{border: "solid", padding: "16px 32px", borderRadius: "5px", width: "17%", marginTop: "32px", textDecoration: "none", color: "black"}}>Confirm Order</Link>
         </>
     );
 }

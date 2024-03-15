@@ -7,7 +7,7 @@ import { GoArrowRight } from "react-icons/go";
 export default function Checkout() {
   const { orderDetails, loading } = useOrderContext();
   if (loading) {
-    return <p>Loading...</p>;
+    return <p style={{textAlign: "center"}}>Loading...</p>;
   }
 
   if (orderDetails.products.length === 0) {
@@ -18,10 +18,10 @@ export default function Checkout() {
   console.log(orderDetails.paymentMethods)
   return (
     <div>
-      <h1>Checkout</h1>
+      <h1 style={{textAlign: "center", marginBottom: "50px"}}>CHECKOUT</h1>
       <OrderSummary details={orderDetails.products} />
-      <div style={{display: "flex", alignItems: "center"}}>
-      <Link href="/payment" style={{border: "solid", padding: "16px 32px", borderRadius: "5px"}}>
+      <div style={{display: "flex", alignItems: "center", border: "solid", padding: "16px 32px", borderRadius: "5px", width: "17%", marginTop: "32px"}}>
+      <Link href="/payment">
         Proceed to Payment 
       </Link>
       <GoArrowRight size={24}/>
