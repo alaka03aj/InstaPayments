@@ -2,6 +2,7 @@
 import Link from "next/link";
 import OrderSummary from "@/components/OrderSummary";
 import { useOrderContext } from "@/context/OrderContext";
+import { GoArrowRight } from "react-icons/go";
 
 export default function Checkout() {
   const { orderDetails, loading } = useOrderContext();
@@ -13,12 +14,18 @@ export default function Checkout() {
     return <p>No items in the cart.</p>;
   }
 
-  console.log(orderDetails.products)
+  console.log(orderDetails.products);
+  console.log(orderDetails.paymentMethods)
   return (
     <div>
       <h1>Checkout</h1>
       <OrderSummary details={orderDetails.products} />
-      <Link href="/payment">Proceed to Payment</Link>
+      <div style={{display: "flex", alignItems: "center"}}>
+      <Link href="/payment" style={{border: "solid", padding: "16px 32px", borderRadius: "5px"}}>
+        Proceed to Payment 
+      </Link>
+      <GoArrowRight size={24}/>
+      </div>
     </div>
   );
 }

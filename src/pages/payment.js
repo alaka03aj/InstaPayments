@@ -1,10 +1,17 @@
-"use client"
-function payment() {
-    return (
-        <div>
-            Payment Dashboard
-        </div>
-    );
-}
+"use client";
+import { useOrderContext } from "@/context/OrderContext";
+export default function Payment() {
 
-export default payment;
+    const { orderDetails, loading } = useOrderContext();
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+
+    console.log(orderDetails)
+  return (
+    <>
+      <div>Payment Dashboard</div>
+      <p>Choose your payment method</p>
+    </>
+  );
+}
