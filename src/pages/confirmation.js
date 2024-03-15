@@ -1,6 +1,6 @@
 import { useOrderContext } from "@/context/OrderContext";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 
 const getRandomPaymentStatus = () => {
   const statuses = ["Successful", "Failed", "Pending"];
@@ -11,8 +11,8 @@ const getRandomPaymentStatus = () => {
 export default function Confirmation() {
   const { orderDetails, loading } = useOrderContext();
   const [paymentStatus, setPaymentStatus] = useState(null);
-  const router = useRouter();
-  const { paymentMethod } = router.query;
+//   const router = useRouter();
+//   const { paymentMethod } = router.query;
 
   useEffect(() => {
     const status = getRandomPaymentStatus();
@@ -36,8 +36,8 @@ export default function Confirmation() {
             </li>
           ))}
       </ul>
-      <p>Payment Method: {paymentMethod}</p>
-      <p>Payment Status: {paymentMethod && paymentStatus}</p>
+      {/* <p>Payment Method: {paymentMethod}</p> */}
+      <p>Payment Status: {paymentStatus}</p>
     </div>
   );
 }

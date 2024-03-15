@@ -35,7 +35,7 @@ export default function Payment() {
                     </div>
                 ))}
             </div>
-            <Link href={`/confirmation?paymentMethod=${selectedPaymentMethod}`}>Confirm Order</Link>
+            <Link href={"/confirmation"}>Confirm Order</Link>
         </>
     );
 }
