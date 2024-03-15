@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useOrderContext } from "@/context/OrderContext";
+import Link from "next/link";
 
 export default function Payment() {
     const { orderDetails, loading } = useOrderContext();
@@ -34,9 +35,7 @@ export default function Payment() {
                     </div>
                 ))}
             </div>
-            <button onClick={() => console.log("Selected payment method:", selectedPaymentMethod)}>
-                Confirm Payment
-            </button>
+            <Link href={`/confirmation?paymentMethod=${selectedPaymentMethod}`}>Confirm Order</Link>
         </>
     );
 }
